@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Free WI-FI</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="body">
+  <header class="header">
+    <a href="#" class="logo logo--tehnoprogress"><img src="./img/tp-logo.svg" alt="Логотип Технопрогресс" class="logo__img"></a>
+    <a href="#" class="logo logo--courson"><img src="./img/courson.svg" alt="Логотип Courson" class="logo__img"></a>
+    <h1 class="main-title">Платформа онлайн видеокурсов</h1>
+  </header>
+  <section class="free-wifi">
+    <div class="free-wifi__inner">
+      <h2 class="subtitle">Чтобы подключиться к сети «FREE WI-FI» пройдите индетификацию:</h2>
+      <form action="#" class="form">
+        <div class="form__input-wrapper form__input-wrapper--name"><input class="form__input js-input" type="text" name="form-input" id="name" placeholder="Имя"></div>
+        <div class="form__input-wrapper form__input-wrapper--email"><input class="form__input js-input" type="E-mail" name="form-input" id="email" placeholder="E-mail"></div>
+        <label class="form__label" for="isAgreedOne">
+          <input class="form__checkbox js-input" type="checkbox" name="agreementOne" id="isAgreedOne" class="form__checkbox" checked>
+          <div class="form__label-text">Согласен на обработку персональных данных</div>
+        </label>
+        <label class="form__label" for="isAgreedTwo">
+          <input class="form__checkbox js-input" type="checkbox" name="agreementTwo" id="isAgreedTwo" class="form__checkbox" checked>
+          <div class="form__label-text">Согласен с <a href="#" target="_blank" class="form__label-link">пользовательским соглашением</a></div>
+        </label>
+        <input class="form__submit form__submit--no-active" type="submit" value="Подключиться" disabled>
+      </form>
+    </div>
+    <div class="gift">
+      <div class="gift__text">
+        <div class="gift__text-color">В подарок</div> вы получаете промокод на первый видеокурс.
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js " integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin=" anonymous "></script>
+  <script>window.jQuery || document.write('<script src="./js/jquery-3.3.1.min.js">\x3C/script>')</script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

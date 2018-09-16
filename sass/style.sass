@@ -1,0 +1,410 @@
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+
+@mixin bgcl($url, $ext)
+  background-image: url('../img/' + $url + '.' + $ext );
+  background-image: image-set(url('../img/' + $url + '.' + $ext) 1x, url('../img/' + $url+ '@2x.' + $ext) 2x, url('../img/' + $url + '@3x.' + $ext) 3x);
+
+@mixin bg($url, $ext)
+  background: url('../img/' + $url + '.' + $ext ) center no-repeat;
+  background: image-set(url('../img/' + $url + '.' + $ext) 1x, url('../img/' + $url+ '@2x.' + $ext) 2x, url('../img/' + $url + '@3x.' + $ext) 3x) center no-repeat;
+
+@mixin trans($trans)
+  transition: $trans .3s ease-in-out
+
+@mixin placeholder
+  &::-webkit-input-placeholder 
+    @content
+  &:-moz-placeholder           
+    @content
+  &::-moz-placeholder          
+    @content
+  &:-ms-input-placeholder      
+    @content
+
+  
+@mixin wrapper()
+  margin-left: auto
+  margin-right: auto
+  max-width: 400px;
+  width: 100%
+  padding: 0 20px;
+  box-sizing: border-box
+
+  @media screen and (min-width: 800px)
+    max-width: 1280px
+    padding-left: 75px
+    padding-right: 75px
+
+$fonts: Arial, Helvetica, sans-serif
+  
+.body
+  margin: 0
+  padding: 0
+  font-family: $fonts
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-size: 14px
+  line-height: 16px
+  background-color: #F5F5F5
+  flex-direction: column;
+  justify-content: center
+  display: flex
+  min-height: 100vh
+
+  @media screen and (min-width: 1000px)
+    justify-content: flex-start
+
+.header
+  @include wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding-top: 10px
+  
+  @media screen and (min-width: 800px)
+    padding-top: 30px
+  @media screen and (min-width: 1000px)
+    padding-top: 55px
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-items: center
+    
+
+.logo
+  display: block
+
+  &--tehnoprogress
+    @include size(127px, 20px)
+
+    @media screen and (min-width: 800px)
+      @include size(180px, 30px)
+    
+    @media screen and (min-width: 1000px)
+      margin-right: 30px
+  &--courson
+    margin-top: 15px
+    @include size(138px, 18px)
+
+    @media screen and (min-width: 1000px)
+      margin-top: 0
+
+  &__img
+    width: 100%
+    height: auto
+    display: block
+
+.main-title
+  margin: 12px auto 0
+  text-align: center
+  font-size: 14px
+  line-height: 16px
+  font-weight: 400
+  
+  @media screen and (min-width: 800px)
+    margin-top: 14px
+    font-size: 23px
+    margin-bottom: 20px
+
+  @media screen and (min-width: 1000px)
+    margin-top: 11px
+    width: 100%
+    text-align: left
+
+
+.subtitle
+  margin: 0 auto
+  font-size: 14px
+  line-height: 16px
+  font-weight: 400
+  max-width: 280px
+  text-align: center
+  position: relative
+  padding-top: 180px
+
+  @media screen and (min-width: 800px)
+    font-size: 20px
+    max-width: 450px;
+    line-height: 23px
+  @media screen and (min-width: 1000px)
+    padding-top: 0
+  &:before
+    content: '';
+    @include size(235px, 167px)
+    background: url('../img/free-wifi-image.svg') center no-repeat;
+    position: absolute
+    top: 0px
+    left: 47%
+    transform: translateX(-50%)
+
+    @media screen and (min-width: 1000px)
+      display: none
+
+
+.free-wifi
+  margin-top: 19px
+  @include wrapper()
+
+  @media screen and (min-width: 1000px)
+    margin-top: auto
+    margin-bottom: auto
+    display: flex
+    flex-wrap: wrap
+
+    &:before
+      content: ''
+      background: url('../img/free-wifi-image.svg') center no-repeat
+      display: block
+      @include size(400px, 300px)
+      margin-right: auto
+      background-size: contain
+
+      @media screen and (min-width: 1200px)
+        @include size(515px, 365px)
+
+
+  &__inner
+    @media screen and (min-width: 1000px)
+      width: 400px;
+      flex: 0 0 400px
+      margin-right: auto
+    
+.form
+  margin-top: 18px
+  margin-bottom: 0
+  padding: 0
+  width: 100%;
+  max-width: 246px;
+  margin-left: auto
+  margin-right: auto 
+
+  @media screen and (min-width: 800px)
+    margin-top: 39px
+    max-width: 387px;
+    margin-bottom: 40px
+
+  &__input
+    width: 100%
+    height: 29px
+    padding: 0 10px 0 34px;
+    border: 1px solid #979797
+    box-sizing: border-box
+    border-radius: 7px
+    font-family: $fonts
+    font-weight: bold;
+    font-size: 13px;
+    color: #898989;
+    outline: none;
+
+    @media screen and (min-width: 800px)
+      height: 49px
+      padding-left: 54px
+      padding-right: 25px
+      font-size: 18px
+
+    &-wrapper
+      position: relative
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 5px
+        transform: translateY(-50%)
+        @include size(25px)
+
+        @media screen and (min-width: 800px)
+          @include size(30px)
+          left: 14px
+      &--name:before
+        background: url('../img/name.svg') center no-repeat;
+        @media screen and (min-width: 800px)
+          background-size: 22px
+      &--email:before
+        background: url('../img/email.svg') center 6px no-repeat;
+        @media screen and (min-width: 800px)
+          background-size: 26px
+          background-position: center 4px
+
+      &:after
+        content: '*'
+        font-family: Helvetica, sans-serif;
+        font-size: 30px;
+        color: #F9593A;
+        position: absolute
+        right: 5px
+        top: 5px
+
+        @media screen and (min-width: 800px)
+          right: 15px
+          top: 15px
+    
+    @include placeholder
+      color: rgba(#898989, .5);
+
+    &-wrapper
+      & + &
+        margin-top: 11px
+
+        @media screen and (min-width: 800px)
+          margin-top: 19px
+      & + .form__label
+        margin-top: 13px
+
+        @media screen and (min-width: 800px)
+          margin-top: 24px
+    
+
+  &__checkbox
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    &:checked + .form__label-text:after
+      opacity: 1
+
+  &__label
+    width: 100%;
+    max-width: 218px;
+    margin-left: auto
+    margin-right: auto
+    cursor: pointer
+    display: block
+
+    @media screen and (min-width: 800px)
+      max-width: 342px
+
+    & + &
+      margin-top: 4px
+
+      @media screen and (min-width: 800px)
+        margin-top: 15px
+
+    &-text
+      font-family: $fonts
+      color: #898989;
+      font-size: 9px
+      width: 100%
+      padding-left: 20px
+      box-sizing: border-box
+      position: relative
+
+      @media screen and (min-width: 800px)
+        font-size: 14px
+        padding-left: 31px
+
+      &:before
+        content: ''
+        @include size(14px, 13px)
+        border: 1px solid #979797
+        box-sizing: border-box
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+
+        @media screen and (min-width: 800px)
+          @include size(22px)
+
+      &:after
+        content: ''
+        @include size(14px, 13px)
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        background: url('../img/check.svg') center no-repeat
+        opacity: 0
+        @include trans(opacity)
+        @media screen and (min-width: 800px)
+          @include size(22px)
+          background-size: 17px
+
+    &-link
+      color: #D0021B
+
+    
+  &__submit
+    @include size(160px, 40px)
+    display: block
+    margin-top: 28px
+    margin-left: auto
+    margin-right: auto
+    background-color: #7ED321;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+    border: none
+    font-family: $fonts
+    font-size: 12px
+    font-weight: bold
+    color: #ffffff
+    text-transform: uppercase
+    text-align: center
+    padding: 5px 0 7px;
+    user-select: none
+    cursor: pointer
+    line-height: 1.2
+    -webkit-appearance: none
+    @include trans(background-color)
+    outline: none;
+
+    &--no-active
+      background-color: #9B9B9B;
+      cursor: default;
+
+    @media screen and (min-width: 800px)
+      @include size(216px, 54px)
+      margin-top: 38px
+      font-size: 16px
+
+.gift
+  max-width: 250px;
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  margin-top: 32px
+  margin-bottom: 32px
+  padding-left: 92px
+  box-sizing: border-box
+  position: relative
+
+  @media screen and (min-width: 800px)
+    max-width: 335px
+    padding-left: 110px
+  @media screen and (min-width: 1000px)
+    margin-top: auto
+    margin-bottom: auto
+
+  &:before
+    content: ''
+    @include size(81px, 57px)
+    transform: translateY(-50%)
+    display: block
+    position: absolute
+    top: 50%
+    left: 0
+    background: url('../img/gitf-icon.svg') center no-repeat;
+
+    @media screen and (min-width: 800px)
+      @include size(98px, 66px)
+      background-size: 98px
+  
+  &__text
+    font-size: 14px;
+
+    @media screen and (min-width: 800px)
+      font-size: 20px
+      line-height: 23px
+    &-color
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #FC4B1E;
+  
