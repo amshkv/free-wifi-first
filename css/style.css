@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 .body {
   margin: 0;
   padding: 0;
@@ -568,7 +573,7 @@
 @media screen and (min-width: 1200px) {
   .gift {
     margin-top: 50px;
-    margin-bottom: auto;
+    margin-bottom: 50px;
   }
 }
 
@@ -609,6 +614,12 @@
   font-weight: bold;
   text-transform: uppercase;
   color: #FC4B1E;
+}
+
+@supports (height: 100vh) {
+  .body {
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

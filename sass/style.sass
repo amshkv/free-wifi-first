@@ -38,6 +38,11 @@
     padding-right: 75px
 
 $fonts: Arial, Helvetica, sans-serif
+
+html,
+body
+  height: 100%;
+
   
 .body
   margin: 0
@@ -382,7 +387,7 @@ $fonts: Arial, Helvetica, sans-serif
     padding-left: 110px
   @media screen and (min-width: 1200px)
     margin-top: 50px
-    margin-bottom: auto
+    margin-bottom: 50px
 
   &:before
     content: ''
@@ -409,3 +414,6 @@ $fonts: Arial, Helvetica, sans-serif
       text-transform: uppercase;
       color: #FC4B1E;
   
+@supports (height: 100vh)
+  .body
+    height: auto
